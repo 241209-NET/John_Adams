@@ -1,0 +1,14 @@
+C:\Users\John\Documents\Revature\241209-NET\John_Adams\Hello_World\bin\Debug\net9.0\Hello_World.exe
+C:\Users\John\Documents\Revature\241209-NET\John_Adams\Hello_World\bin\Debug\net9.0\Hello_World.deps.json
+C:\Users\John\Documents\Revature\241209-NET\John_Adams\Hello_World\bin\Debug\net9.0\Hello_World.runtimeconfig.json
+C:\Users\John\Documents\Revature\241209-NET\John_Adams\Hello_World\bin\Debug\net9.0\Hello_World.dll
+C:\Users\John\Documents\Revature\241209-NET\John_Adams\Hello_World\bin\Debug\net9.0\Hello_World.pdb
+C:\Users\John\Documents\Revature\241209-NET\John_Adams\Hello_World\obj\Debug\net9.0\Hello_World.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\John\Documents\Revature\241209-NET\John_Adams\Hello_World\obj\Debug\net9.0\Hello_World.AssemblyInfoInputs.cache
+C:\Users\John\Documents\Revature\241209-NET\John_Adams\Hello_World\obj\Debug\net9.0\Hello_World.AssemblyInfo.cs
+C:\Users\John\Documents\Revature\241209-NET\John_Adams\Hello_World\obj\Debug\net9.0\Hello_World.csproj.CoreCompileInputs.cache
+C:\Users\John\Documents\Revature\241209-NET\John_Adams\Hello_World\obj\Debug\net9.0\Hello_World.dll
+C:\Users\John\Documents\Revature\241209-NET\John_Adams\Hello_World\obj\Debug\net9.0\refint\Hello_World.dll
+C:\Users\John\Documents\Revature\241209-NET\John_Adams\Hello_World\obj\Debug\net9.0\Hello_World.pdb
+C:\Users\John\Documents\Revature\241209-NET\John_Adams\Hello_World\obj\Debug\net9.0\Hello_World.genruntimeconfig.cache
+C:\Users\John\Documents\Revature\241209-NET\John_Adams\Hello_World\obj\Debug\net9.0\ref\Hello_World.dll
