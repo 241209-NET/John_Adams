@@ -1,0 +1,15 @@
+C:\Users\John\Documents\Revature\241209-NET\John_Adams\BasicCsharp\bin\Debug\net9.0\BasicCsharp.exe
+C:\Users\John\Documents\Revature\241209-NET\John_Adams\BasicCsharp\bin\Debug\net9.0\BasicCsharp.deps.json
+C:\Users\John\Documents\Revature\241209-NET\John_Adams\BasicCsharp\bin\Debug\net9.0\BasicCsharp.runtimeconfig.json
+C:\Users\John\Documents\Revature\241209-NET\John_Adams\BasicCsharp\bin\Debug\net9.0\BasicCsharp.dll
+C:\Users\John\Documents\Revature\241209-NET\John_Adams\BasicCsharp\bin\Debug\net9.0\BasicCsharp.pdb
+C:\Users\John\Documents\Revature\241209-NET\John_Adams\BasicCsharp\obj\Debug\net9.0\BasicCsharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\John\Documents\Revature\241209-NET\John_Adams\BasicCsharp\obj\Debug\net9.0\BasicCsharp.AssemblyInfoInputs.cache
+C:\Users\John\Documents\Revature\241209-NET\John_Adams\BasicCsharp\obj\Debug\net9.0\BasicCsharp.AssemblyInfo.cs
+C:\Users\John\Documents\Revature\241209-NET\John_Adams\BasicCsharp\obj\Debug\net9.0\BasicCsharp.csproj.CoreCompileInputs.cache
+C:\Users\John\Documents\Revature\241209-NET\John_Adams\BasicCsharp\obj\Debug\net9.0\BasicCsharp.sourcelink.json
+C:\Users\John\Documents\Revature\241209-NET\John_Adams\BasicCsharp\obj\Debug\net9.0\BasicCsharp.dll
+C:\Users\John\Documents\Revature\241209-NET\John_Adams\BasicCsharp\obj\Debug\net9.0\refint\BasicCsharp.dll
+C:\Users\John\Documents\Revature\241209-NET\John_Adams\BasicCsharp\obj\Debug\net9.0\BasicCsharp.pdb
+C:\Users\John\Documents\Revature\241209-NET\John_Adams\BasicCsharp\obj\Debug\net9.0\BasicCsharp.genruntimeconfig.cache
+C:\Users\John\Documents\Revature\241209-NET\John_Adams\BasicCsharp\obj\Debug\net9.0\ref\BasicCsharp.dll
