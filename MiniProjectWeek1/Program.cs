@@ -135,6 +135,7 @@ class Program
                 break;
             case 3:
                 Console.Clear();
+                spendrunning = true;
                 while(spendrunning)
                 {
                     if(p.XP <= 0)
@@ -149,10 +150,12 @@ class Program
                         {
                             case 1:
                                 p.Health += 10;
+                                p.XP -= 1;
                                 Console.WriteLine("You have added 10 Health.");
                                 break;
                             case 2:
                                 p.Attack += 1;
+                                p.XP -= 1;
                                 Console.WriteLine("You have added 1 Attack.");
                                 break;
                             case 3:
