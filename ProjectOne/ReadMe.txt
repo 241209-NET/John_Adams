@@ -1,0 +1,5 @@
+--------PROJECT 1 IDEAS--------
+-Pokemon
+-Pals
+-Budget
+-Bank
