@@ -8,7 +8,7 @@ public interface IPetService
     IEnumerable<Pet> GetAllPets();
     Pet? GetPetById(int id);
     IEnumerable<Pet> GetPetByName(string name);
-    
+    Pet? DeletePetById(int id);
 }
 
 public interface IOwnerService

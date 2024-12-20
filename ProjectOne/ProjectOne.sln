@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAPI.API", "MyAPI.api\MyAPI.API.csproj", "{6CC12C2E-02FD-4292-BB48-6E8835F87546}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetTracker.TEST", "PetTracker.TEST\PetTracker.TEST.csproj", "{13BDF587-3DBA-4027-A901-008324C771B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6CC12C2E-02FD-4292-BB48-6E8835F87546}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CC12C2E-02FD-4292-BB48-6E8835F87546}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CC12C2E-02FD-4292-BB48-6E8835F87546}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CC12C2E-02FD-4292-BB48-6E8835F87546}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13BDF587-3DBA-4027-A901-008324C771B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13BDF587-3DBA-4027-A901-008324C771B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13BDF587-3DBA-4027-A901-008324C771B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13BDF587-3DBA-4027-A901-008324C771B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

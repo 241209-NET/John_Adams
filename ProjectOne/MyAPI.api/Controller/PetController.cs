@@ -25,19 +25,32 @@ public class PetController : ControllerBase
     public IActionResult CreatePet(Pet p)
     {
         var pet = _petService.CreatePet(p);
+        
+        if(pet is null) return NotFound();
+
         return Ok(pet);
     }
 
-    [HttpDelete]//Remove an object or item from our list
-    public IActionResult DeletePet(string name)
+    [HttpGet("id")]//Annotation for Get from the route annotation
+    public IActionResult GetPetById(int id)
     {
-        throw new NotImplementedException();
+        var pet = _petService.GetPetById(id);
+        //Return IAction result to send HTTP status code
+        return Ok(pet);
     }
 
-    //[HttpDelete]
-    //public IActionResult DeletePet(int id)
+    //[HttpDelete]//Remove an object or item from our list
+    //public IActionResult DeletePet(string name)
     //{
-    //    
+    //    throw new NotImplementedException();
     //}
+
+    [HttpDelete]
+    public IActionResult DeletePet(int id)
+    {
+        var deletePet = _petService.DeletePetById(id);
+        if(deletePet is null) return NotFound();
+        return Ok(deletePet);
+    }
 
 }

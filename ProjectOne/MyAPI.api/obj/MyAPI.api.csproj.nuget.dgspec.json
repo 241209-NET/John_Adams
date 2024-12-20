@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\John\\Documents\\Revature\\241209-NET\\John_Adams\\ProjectOne\\MyAPI.api\\MyAPI.api.csproj": {}
+    "C:\\Users\\John\\Documents\\Revature\\241209-NET\\John_Adams\\ProjectOne\\MyAPI.api\\MyAPI.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\John\\Documents\\Revature\\241209-NET\\John_Adams\\ProjectOne\\MyAPI.api\\MyAPI.api.csproj": {
+    "C:\\Users\\John\\Documents\\Revature\\241209-NET\\John_Adams\\ProjectOne\\MyAPI.api\\MyAPI.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\John\\Documents\\Revature\\241209-NET\\John_Adams\\ProjectOne\\MyAPI.api\\MyAPI.api.csproj",
-        "projectName": "MyAPI.api",
-        "projectPath": "C:\\Users\\John\\Documents\\Revature\\241209-NET\\John_Adams\\ProjectOne\\MyAPI.api\\MyAPI.api.csproj",
+        "projectUniqueName": "C:\\Users\\John\\Documents\\Revature\\241209-NET\\John_Adams\\ProjectOne\\MyAPI.api\\MyAPI.API.csproj",
+        "projectName": "MyAPI.API",
+        "projectPath": "C:\\Users\\John\\Documents\\Revature\\241209-NET\\John_Adams\\ProjectOne\\MyAPI.api\\MyAPI.API.csproj",
         "packagesPath": "C:\\Users\\John\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\John\\Documents\\Revature\\241209-NET\\John_Adams\\ProjectOne\\MyAPI.api\\obj\\",
         "projectStyle": "PackageReference",
@@ -55,6 +55,16 @@
               "version": "[9.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
