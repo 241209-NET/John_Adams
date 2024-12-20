@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
 using PetTracker.API.Model;
+using PetTracker.API.Service;
 
 namespace PetTracker.API.Controller;
 
@@ -8,16 +9,14 @@ namespace PetTracker.API.Controller;
 [ApiController]//Annotation for API Controller for ASPNET
 public class PetController : ControllerBase
 {
-    List<Pet> petList = [
-        new Pet{Id = 1, Name = "Everest", Type = "Dog"},
-        new Pet{Id = 2, Name = "Latte", Type = "Dog"},
-        new Pet{Id = 3, Name = "Stella", Type = "Cat"},
-        new Pet{Id = 4, Name = "Buddy", Type = "Dog"},
-        new Pet{Id = 5, Name = "Birdy", Type = "Bird"}
-    ];
+    private readonly IPetService _petService;
+
+    public PetController(IPetService petService) => _petService = petService;
+
     [HttpGet]//Annotation for Get from the route annotation
     public IActionResult GetAllPets()
     {
+        var petList = _petService.GetAllPets();
         //Return IAction result to send HTTP status code
         return Ok(petList);
     }
@@ -25,19 +24,13 @@ public class PetController : ControllerBase
     [HttpPost]//Adds an object to our storage
     public IActionResult CreatePet(Pet p)
     {
-        petList.Add(p);
-        return Ok(petList);
+        throw new NotImplementedException();
     }
 
     [HttpDelete]//Remove an object or item from our list
     public IActionResult DeletePet(string name)
     {
-        var findPet = petList.FirstOrDefault(p => p.Name == name);
-        
-        if(findPet is null)return NotFound();
-
-        petList.Remove(findPet);
-        return Ok(petList);
+        throw new NotImplementedException();
     }
 
     //[HttpDelete]
