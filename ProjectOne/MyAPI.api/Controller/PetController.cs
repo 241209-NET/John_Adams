@@ -4,7 +4,7 @@ using PetTracker.API.Model;
 using PetTracker.API.Service;
 
 namespace PetTracker.API.Controller;
-
+//Input and output only not business logic should not care if variables are useable
 [Route("api/[controller]")]//Annotation for route of the controller
 [ApiController]//Annotation for API Controller for ASPNET
 public class PetController : ControllerBase
@@ -24,7 +24,8 @@ public class PetController : ControllerBase
     [HttpPost]//Adds an object to our storage
     public IActionResult CreatePet(Pet p)
     {
-        throw new NotImplementedException();
+        var pet = _petService.CreatePet(p);
+        return Ok(pet);
     }
 
     [HttpDelete]//Remove an object or item from our list

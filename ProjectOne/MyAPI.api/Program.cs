@@ -1,5 +1,6 @@
 using Microsoft.Extensions.Options;
 using PetTracker.API.Data;
+using PetTracker.API.Repository;
 using PetTracker.API.Service;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,8 @@ builder.Services.AddSwaggerGen();
 
 //Dependency Inject the proper services
 builder.Services.AddScoped<IPetService, PetService>();
+builder.Services.AddScoped<IPetRepository, PetRepository>();
+
 
 //Add our controllers
 builder.Services.AddControllers();
