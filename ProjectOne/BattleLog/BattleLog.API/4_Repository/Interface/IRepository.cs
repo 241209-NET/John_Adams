@@ -21,3 +21,13 @@ public interface IEnemyRepository
     Enemy? UpdateEnemyById(int id);
     void DeleteEnemyById(int id);    
 }
+
+public interface IBattleRepository
+{
+    //CRUD
+    Battle CreateNewBattle(Battle newPlayer); 
+    IEnumerable<Battle> GetAllBattles(); 
+    Battle? GetBattleById(int id); 
+    Battle? UpdateBattleById(int id);
+    void DeleteBattleById(int id);    
+}

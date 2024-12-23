@@ -10,10 +10,7 @@ public class PlayerController : ControllerBase
 {
     private readonly IPlayerService _playerService;
 
-    public PlayerController(IPlayerService playerService)
-    {
-        _playerService = playerService;
-    }
+    public PlayerController(IPlayerService playerService) => _playerService = playerService;
 
     [HttpPost]
     public IActionResult CreateNewPlayer(Player newPlayer)

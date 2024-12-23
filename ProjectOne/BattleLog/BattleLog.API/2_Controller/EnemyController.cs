@@ -10,10 +10,7 @@ public class EnemyController : ControllerBase
 {
     private readonly IEnemyService _enemyService;
 
-    public EnemyController(IEnemyService enemyService)
-    {
-        _enemyService = enemyService;
-    }
+    public EnemyController(IEnemyService enemyService) => _enemyService = enemyService;
 
     [HttpPost]
     public IActionResult CreateNewEnemy(Enemy newEnemy)

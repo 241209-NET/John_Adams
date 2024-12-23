@@ -19,3 +19,12 @@ public interface IEnemyService
     Enemy? UpdateEnemyById(int id);
     Enemy? DeleteEnemyById(int id);
 }
+
+public interface IBattleService
+{
+    Battle CreateNewBattle(Battle newEnemy);
+    IEnumerable<Battle> GetAllBattles();
+    Battle? GetBattleById(int id);
+    Battle? UpdateBattleById(int id);
+    Battle? DeleteBattleById(int id);
+}

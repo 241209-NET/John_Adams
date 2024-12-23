@@ -6,27 +6,27 @@ namespace BattleLog.API.Repository;
 public class EnemyRepository : IEnemyRepository
 {
     //Need the DB Object to work with.
-    private readonly DataContext _EnemyContext;
+    private readonly DataContext _enemyContext;
 
-    public EnemyRepository(DataContext EnemyContext) => _EnemyContext = EnemyContext;
+    public EnemyRepository(DataContext enemyContext) => _enemyContext = enemyContext;
 
     public Enemy CreateNewEnemy(Enemy newEnemy)
     {
-        //Insert into Enemys Values (newEnemy)
-        _EnemyContext.Enemies.Add(newEnemy);
-        _EnemyContext.SaveChanges();
+        //Insert into Enemies Values (newEnemy)
+        _enemyContext.Enemies.Add(newEnemy);
+        _enemyContext.SaveChanges();
         return newEnemy;
     }
 
     public IEnumerable<Enemy> GetAllEnemies()
     {
-        return _EnemyContext.Enemies.ToList();
+        return _enemyContext.Enemies.ToList();
     }
 
 
     public Enemy? GetEnemyById(int id)
     {
-        return _EnemyContext.Enemies.FirstOrDefault(p => p.Id == id);
+        return _enemyContext.Enemies.FirstOrDefault(p => p.Id == id);
     }
 
     public Enemy? UpdateEnemyById(int id)
@@ -37,7 +37,7 @@ public class EnemyRepository : IEnemyRepository
     public void DeleteEnemyById(int id)
     {
         var Enemy = GetEnemyById(id);
-        _EnemyContext.Enemies.Remove(Enemy!);
-        _EnemyContext.SaveChanges();
+        _enemyContext.Enemies.Remove(Enemy!);
+        _enemyContext.SaveChanges();
     }
 }

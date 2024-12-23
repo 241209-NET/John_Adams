@@ -17,7 +17,10 @@ builder.Services.AddSwaggerGen();
 //Dependency Inject the proper services
 builder.Services.AddScoped<IPlayerService, PlayerService>();
 builder.Services.AddScoped<IPlayerRepository, PlayerRepository>();
-
+builder.Services.AddScoped<IEnemyService, EnemyService>();
+builder.Services.AddScoped<IEnemyRepository, EnemyRepository>();
+builder.Services.AddScoped<IBattleService, BattleService>();
+builder.Services.AddScoped<IBattleRepository, BattleRepository>();
 
 //Add our controllers
 builder.Services.AddControllers();
