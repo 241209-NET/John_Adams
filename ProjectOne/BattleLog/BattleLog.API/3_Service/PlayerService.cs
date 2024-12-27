@@ -25,7 +25,7 @@ public class PlayerService : IPlayerService
         return _playerRepository.GetPlayerById(id);
     }
     
-    public Player? UpdatePlayerById(int id)
+    public Player? UpdatePlayer(Player p)
     {
         throw new NotImplementedException();
     }

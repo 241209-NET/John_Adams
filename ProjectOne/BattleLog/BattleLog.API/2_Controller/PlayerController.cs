@@ -36,10 +36,10 @@ public class PlayerController : ControllerBase
         return Ok(findPlayer);
     }
 
-    [HttpPut("{id}")]
-    public IActionResult UpdatePlayerById(int id)
+    [HttpPut("{player}")]
+    public IActionResult UpdatePlayer(Player player)
     {
-        var Player = _playerService.UpdatePlayerById(id);
+        var Player = _playerService.UpdatePlayer(player);
         return Ok(Player);
     }
 

@@ -29,7 +29,7 @@ public class PlayerRepository : IPlayerRepository
         return _playerContext.Players.FirstOrDefault(p => p.Id == id);
     }
 
-    public Player? UpdatePlayerById(int id)
+    public Player? UpdatePlayer(Player p)
     {
         throw new NotImplementedException();
     }

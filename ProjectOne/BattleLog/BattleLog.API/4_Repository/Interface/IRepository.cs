@@ -8,7 +8,7 @@ public interface IPlayerRepository
     Player CreateNewPlayer(Player newPlayer); 
     IEnumerable<Player> GetAllPlayers(); 
     Player? GetPlayerById(int id); 
-    Player? UpdatePlayerById(int id);
+    Player? UpdatePlayer(Player p);
     void DeletePlayerById(int id);    
 }
 

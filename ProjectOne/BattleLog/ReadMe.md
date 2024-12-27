@@ -1,4 +1,4 @@
-# Text-Based Battler
+# Text-Based BattleLog
 ## Overview
 - Text-Based Battler is an ASP.NET Core application that allows users to engage in creating a log for battles between a player and various enemies. 
 - The application features a RESTful API for managing players, enemies, and battle logs, with data persistence to a SQL Server database.
