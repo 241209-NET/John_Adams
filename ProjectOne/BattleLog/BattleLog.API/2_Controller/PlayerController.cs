@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using BattleLog.API.Service;
 using BattleLog.API.Model;
+using BattleLog.API.DTO;
 
 namespace BattleLog.API.Controller;
 
@@ -13,7 +14,7 @@ public class PlayerController : ControllerBase
     public PlayerController(IPlayerService playerService) => _playerService = playerService;
 
     [HttpPost]
-    public IActionResult CreateNewPlayer(Player newPlayer)
+    public IActionResult CreateNewPlayer(PlayerInDTO newPlayer)
     {
         var Player = _playerService.CreateNewPlayer(newPlayer);
         return Ok(Player);

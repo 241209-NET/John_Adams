@@ -29,9 +29,11 @@ public class EnemyRepository : IEnemyRepository
         return _enemyContext.Enemies.FirstOrDefault(p => p.Id == id);
     }
 
-    public Enemy? UpdateEnemyById(int id)
+    public Enemy? UpdateEnemy(Enemy e)
     {
-        throw new NotImplementedException();
+        _enemyContext.Enemies.Update(e);
+        _enemyContext.SaveChanges();
+        return e;
     }
 
     public void DeleteEnemyById(int id)

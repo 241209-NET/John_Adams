@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using BattleLog.API.Service;
 using BattleLog.API.Model;
+using BattleLog.API.DTO;
 
 namespace BattleLog.API.Controller;
 
@@ -13,7 +14,7 @@ public class EnemyController : ControllerBase
     public EnemyController(IEnemyService enemyService) => _enemyService = enemyService;
 
     [HttpPost]
-    public IActionResult CreateNewEnemy(Enemy newEnemy)
+    public IActionResult CreateNewEnemy(EnemyInDTO newEnemy)
     {
         var enemy = _enemyService.CreateNewEnemy(newEnemy);
         return Ok(enemy);
@@ -36,10 +37,10 @@ public class EnemyController : ControllerBase
         return Ok(findEnemy);
     }
 
-    [HttpPut("{id}")]
-    public IActionResult UpdateEnemyById(int id)
+    [HttpPut("{enemy}")]
+    public IActionResult UpdateEnemy(Enemy enemy)
     {
-        var enemy = _enemyService.UpdateEnemyById(id);
+        var e = _enemyService.UpdateEnemy(enemy);
         return Ok(enemy);
     }
 

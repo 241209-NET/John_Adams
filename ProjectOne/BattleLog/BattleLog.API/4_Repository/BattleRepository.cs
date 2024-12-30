@@ -29,9 +29,11 @@ public class BattleRepository : IBattleRepository
         return _battleContext.Battles.FirstOrDefault(p => p.Id == id);
     }
 
-    public Battle? UpdateBattleById(int id)
+    public Battle? UpdateBattle(Battle battle)
     {
-        throw new NotImplementedException();
+        _battleContext.Battles.Update(battle);
+        _battleContext.SaveChanges();
+        return battle;
     }
 
     public void DeleteBattleById(int id)

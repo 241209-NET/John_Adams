@@ -18,7 +18,7 @@ public interface IEnemyRepository
     Enemy CreateNewEnemy(Enemy newPlayer); 
     IEnumerable<Enemy> GetAllEnemies(); 
     Enemy? GetEnemyById(int id); 
-    Enemy? UpdateEnemyById(int id);
+    Enemy? UpdateEnemy(Enemy enemy);
     void DeleteEnemyById(int id);    
 }
 
@@ -28,6 +28,6 @@ public interface IBattleRepository
     Battle CreateNewBattle(Battle newPlayer); 
     IEnumerable<Battle> GetAllBattles(); 
     Battle? GetBattleById(int id); 
-    Battle? UpdateBattleById(int id);
+    Battle? UpdateBattle(Battle battle);
     void DeleteBattleById(int id);    
 }

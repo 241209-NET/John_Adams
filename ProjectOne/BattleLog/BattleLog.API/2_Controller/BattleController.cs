@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using BattleLog.API.Service;
 using BattleLog.API.Model;
+using BattleLog.API.DTO;
 
 namespace BattleLog.API.Controller;
 
@@ -13,7 +14,7 @@ public class BattleController : ControllerBase
     public BattleController(IBattleService battleService) => _battleService = battleService;
 
     [HttpPost]
-    public IActionResult CreateNewBattle(Battle newBattle)
+    public IActionResult CreateNewBattle(BattleInDTO newBattle)
     {
         var battle = _battleService.CreateNewBattle(newBattle);
         return Ok(battle);
@@ -36,10 +37,10 @@ public class BattleController : ControllerBase
         return Ok(findBattle);
     }
 
-    [HttpPut("{id}")]
-    public IActionResult UpdateBattleById(int id)
+    [HttpPut("{battle}")]
+    public IActionResult UpdateBattle(Battle battle)
     {
-        var battle = _battleService.UpdateBattleById(id);
+        var b = _battleService.UpdateBattle(battle);
         return Ok(battle);
     }
 

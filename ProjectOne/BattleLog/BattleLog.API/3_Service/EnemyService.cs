@@ -1,3 +1,5 @@
+using AutoMapper;
+using BattleLog.API.DTO;
 using BattleLog.API.Model;
 using BattleLog.API.Repository;
 
@@ -6,12 +8,18 @@ namespace BattleLog.API.Service;
 public class EnemyService : IEnemyService
 {
     private readonly IEnemyRepository _enemyRepository;
+    private readonly IMapper _mapper;
 
-    public EnemyService(IEnemyRepository enemyRepository) => _enemyRepository = enemyRepository;
-
-    public Enemy CreateNewEnemy(Enemy newEnemy)
+    public EnemyService(IEnemyRepository enemyRepository, IMapper mapper)
     {
-        return _enemyRepository.CreateNewEnemy(newEnemy);
+        _enemyRepository = enemyRepository;
+        _mapper = mapper;
+    }
+
+    public Enemy CreateNewEnemy(EnemyInDTO newEnemy)
+    {
+        Enemy enemy = _mapper.Map<Enemy>(newEnemy);
+        return _enemyRepository.CreateNewEnemy(enemy);
     }
 
     public IEnumerable<Enemy> GetAllEnemies()
@@ -25,9 +33,18 @@ public class EnemyService : IEnemyService
         return _enemyRepository.GetEnemyById(id);
     }
     
-    public Enemy? UpdateEnemyById(int id)
+    public Enemy? UpdateEnemy(Enemy enemy)
     {
-        throw new NotImplementedException();
+        var e = GetEnemyById(enemy.Id);
+        if(e is null) return null;
+
+        e.AttackPower = enemy.AttackPower;
+        e.Health = enemy.Health;
+        e.Name = enemy.Name;
+        e.Experience = enemy.Experience;
+        
+        _enemyRepository.UpdateEnemy(e);
+        return e;
     }
 
     public Enemy? DeleteEnemyById(int id)

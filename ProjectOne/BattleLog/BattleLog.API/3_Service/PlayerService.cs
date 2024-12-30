@@ -1,3 +1,5 @@
+using AutoMapper;
+using BattleLog.API.DTO;
 using BattleLog.API.Model;
 using BattleLog.API.Repository;
 
@@ -6,12 +8,17 @@ namespace BattleLog.API.Service;
 public class PlayerService : IPlayerService
 {
     private readonly IPlayerRepository _playerRepository;
-
-    public PlayerService(IPlayerRepository playerRepository) => _playerRepository = playerRepository;
-
-    public Player CreateNewPlayer(Player newPlayer)
+    private readonly IMapper _mapper;
+    public PlayerService(IPlayerRepository playerRepository, IMapper mapper) 
     {
-        return _playerRepository.CreateNewPlayer(newPlayer);
+        _playerRepository = playerRepository;
+        _mapper = mapper;
+    }
+
+    public Player CreateNewPlayer(PlayerInDTO newPlayer)
+    {
+        Player player = _mapper.Map<Player>(newPlayer);
+        return _playerRepository.CreateNewPlayer(player);
     }
 
     public IEnumerable<Player> GetAllPlayers()
@@ -27,7 +34,16 @@ public class PlayerService : IPlayerService
     
     public Player? UpdatePlayer(Player p)
     {
-        throw new NotImplementedException();
+        var player = GetPlayerById(p.Id);
+        if(player is null) return null;
+
+        player.AttackPower = p.AttackPower;
+        player.Health = p.Health;
+        player.Name = p.Name;
+        player.Experience = p.Experience;
+        
+        _playerRepository.UpdatePlayer(player);
+        return player;
     }
 
     public Player? DeletePlayerById(int id)

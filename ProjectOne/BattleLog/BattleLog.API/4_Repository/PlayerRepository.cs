@@ -31,7 +31,9 @@ public class PlayerRepository : IPlayerRepository
 
     public Player? UpdatePlayer(Player p)
     {
-        throw new NotImplementedException();
+        _playerContext.Players.Update(p);
+        _playerContext.SaveChanges();
+        return p;
     }
 
     public void DeletePlayerById(int id)

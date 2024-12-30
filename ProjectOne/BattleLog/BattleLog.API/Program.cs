@@ -3,6 +3,7 @@ using Microsoft.Extensions.Options;
 using BattleLog.API.Data;
 using BattleLog.API.Repository;
 using BattleLog.API.Service;
+using BattleLog.API.Model;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,11 +17,15 @@ builder.Services.AddSwaggerGen();
 
 //Dependency Inject the proper services
 builder.Services.AddScoped<IPlayerService, PlayerService>();
-builder.Services.AddScoped<IPlayerRepository, PlayerRepository>();
 builder.Services.AddScoped<IEnemyService, EnemyService>();
-builder.Services.AddScoped<IEnemyRepository, EnemyRepository>();
 builder.Services.AddScoped<IBattleService, BattleService>();
+
+builder.Services.AddScoped<IPlayerRepository, PlayerRepository>();
+builder.Services.AddScoped<IEnemyRepository, EnemyRepository>();
 builder.Services.AddScoped<IBattleRepository, BattleRepository>();
+
+//Add automapper
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 //Add our controllers
 builder.Services.AddControllers();
