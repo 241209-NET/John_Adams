@@ -18,7 +18,7 @@ public class PlayerServiceTest
         // Configure AutoMapper
         var config = new MapperConfiguration(cfg =>
         {
-            cfg.AddProfile<MappingProfile>(); // Use your actual mapping profile class
+            cfg.AddProfile<MappingProfile>();
         });
         IMapper mapper = config.CreateMapper();
         PlayerService playerService = new(mockRepo.Object, mapper);
@@ -27,22 +27,21 @@ public class PlayerServiceTest
             new Player{Id = 1, Name = "Bob", AttackPower = 1, Experience = 1, Health = 5},
             new Player{Id = 2, Name = "Bill", AttackPower = 2, Experience = 1, Health = 5},
             new Player{Id = 3, Name = "Tim", AttackPower = 4, Experience = 1, Health = 5},
-            new Player{Id = 4, Name = "Jim", AttackPower = 8, Experience = 1, Health = 5},
-            new Player{Id = 5, Name = "Man", AttackPower = 16, Experience = 1, Health = 5}
         ];
 
-        Player newPlayer = new Player{Id = 1, Name = "Frank", AttackPower = 1, Experience = 0, Health = 5};
+        Player newPlayer = new Player{Id = 0, Name = "Frank", AttackPower = 1, Experience = 0, Health = 5};
 
         mockRepo.Setup(repo => repo.CreateNewPlayer(It.IsAny<Player>()))
-            .Callback((Player p) => playerList.Add(p))
+            .Callback(() => playerList.Add(newPlayer))
             .Returns(newPlayer);
         
         PlayerInDTO playerInDTO = new PlayerInDTO{Name = newPlayer.Name, AttackPower = newPlayer.AttackPower, Health = newPlayer.Health};
         //Act
-        var myPlayer = playerService.CreateNewPlayer(playerInDTO);
+        Player myPlayer = playerService.CreateNewPlayer(playerInDTO);
 
         //Assert
-        Assert.Contains(newPlayer, playerList);
+        Assert.True(Object.ReferenceEquals(myPlayer, newPlayer));
+        Assert.Contains(myPlayer, playerList);
         mockRepo.Verify(x => x.CreateNewPlayer(It.IsAny<Player>()), Times.Once());
     }
 }
