@@ -154,4 +154,48 @@ public class PlayerServiceTest
         mockRepo.Verify(x => x.GetPlayerById(It.IsAny<int>()), Times.Once());
         mockRepo.Verify(x => x.DeletePlayerById(It.IsAny<int>()), Times.Once());
     }
+    [Fact]
+    public void TestGetPlayerById_ReturnsNullIfIdIsLessThanOne()
+    {
+        // Arrange
+        Mock<IPlayerRepository> mockRepo = new();
+        var config = new MapperConfiguration(cfg => 
+        {
+            cfg.AddProfile<MappingProfile>();
+        });
+        IMapper mapper = config.CreateMapper();
+        PlayerService playerService = new(mockRepo.Object, mapper);
+
+        // Act
+        var result = playerService.GetPlayerById(0);
+
+        // Assert
+        Assert.Null(result);
+        mockRepo.Verify(x => x.GetPlayerById(It.IsAny<int>()), Times.Never());
+    }
+
+    [Fact]
+    public void TestUpdatePlayer_ReturnsNullIfEnemyDoesNotExist()
+    {
+        // Arrange
+        Mock<IPlayerRepository> mockRepo = new();
+        var config = new MapperConfiguration(cfg => 
+        {
+            cfg.AddProfile<MappingProfile>();
+        });
+        IMapper mapper = config.CreateMapper();
+        PlayerService playerService = new(mockRepo.Object, mapper);
+
+        mockRepo.Setup(repo => repo.GetPlayerById(It.IsAny<int>())).Returns((Player)null!);
+
+        Player playerToUpdate = new() { Id = 99, Name = "Orc", AttackPower = 10, Experience = 5, Health = 50 };
+
+        // Act
+        var result = playerService.UpdatePlayer(playerToUpdate);
+
+        // Assert
+        Assert.Null(result);
+        mockRepo.Verify(x => x.GetPlayerById(It.IsAny<int>()), Times.Once());
+        mockRepo.Verify(x => x.UpdatePlayer(It.IsAny<Player>()), Times.Never());
+    }
 }

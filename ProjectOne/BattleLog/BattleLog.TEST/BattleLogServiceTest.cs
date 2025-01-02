@@ -158,4 +158,48 @@ public class BattleLogServiceTest
         mockRepo.Verify(x => x.GetBattleById(It.IsAny<int>()), Times.Once());
         mockRepo.Verify(x => x.DeleteBattleById(It.IsAny<int>()), Times.Once());
     }
+    [Fact]
+    public void TestGetBattleById_ReturnsNullIfIdIsLessThanOne()
+    {
+        // Arrange
+        Mock<IBattleRepository> mockRepo = new();
+        var config = new MapperConfiguration(cfg => 
+        {
+            cfg.AddProfile<MappingProfile>();
+        });
+        IMapper mapper = config.CreateMapper();
+        BattleService battleService = new(mockRepo.Object, mapper);
+
+        // Act
+        var result = battleService.GetBattleById(0);
+
+        // Assert
+        Assert.Null(result);
+        mockRepo.Verify(x => x.GetBattleById(It.IsAny<int>()), Times.Never());
+    }
+
+    [Fact]
+    public void TestUpdateBattle_ReturnsNullIfBattleDoesNotExist()
+    {
+        // Arrange
+        Mock<IBattleRepository> mockRepo = new();
+        var config = new MapperConfiguration(cfg => 
+        {
+            cfg.AddProfile<MappingProfile>();
+        });
+        IMapper mapper = config.CreateMapper();
+        BattleService battleService = new(mockRepo.Object, mapper);
+
+        mockRepo.Setup(repo => repo.GetBattleById(It.IsAny<int>())).Returns((Battle)null!);
+
+        Battle battleToUpdate = new() { Id = 99, player = null!, enemy = null!, BattleDate = null };
+
+        // Act
+        var result = battleService.UpdateBattle(battleToUpdate);
+
+        // Assert
+        Assert.Null(result);
+        mockRepo.Verify(x => x.GetBattleById(It.IsAny<int>()), Times.Once());
+        mockRepo.Verify(x => x.UpdateBattle(It.IsAny<Battle>()), Times.Never());
+    }
 }

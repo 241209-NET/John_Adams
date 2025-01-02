@@ -37,8 +37,8 @@ public class EnemyController : ControllerBase
         return Ok(findEnemy);
     }
 
-    [HttpPut("{enemy}")]
-    public IActionResult UpdateEnemy(Enemy enemy)
+    [HttpPut]
+    public IActionResult UpdateEnemy([FromBody]Enemy enemy)
     {
         var e = _enemyService.UpdateEnemy(enemy);
         return Ok(enemy);

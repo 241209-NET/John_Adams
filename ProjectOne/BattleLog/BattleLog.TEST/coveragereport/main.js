@@ -221,9 +221,9 @@ var assemblies = [
   {
     "name": "BattleLog.API",
     "classes": [
-      { "name": "BattleLog.API.Service.BattleService", "rp": "BattleLog.API_BattleService.html", "cl": 30, "ucl": 0, "cal": 30, "tl": 56, "cb": 4, "tb": 6, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "BattleLog.API.Service.EnemyService", "rp": "BattleLog.API_EnemyService.html", "cl": 31, "ucl": 0, "cal": 31, "tl": 58, "cb": 4, "tb": 6, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "BattleLog.API.Service.PlayerService", "rp": "BattleLog.API_PlayerService.html", "cl": 31, "ucl": 0, "cal": 31, "tl": 57, "cb": 4, "tb": 6, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "BattleLog.API.Service.BattleService", "rp": "BattleLog.API_BattleService.html", "cl": 30, "ucl": 0, "cal": 30, "tl": 56, "cb": 6, "tb": 6, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "BattleLog.API.Service.EnemyService", "rp": "BattleLog.API_EnemyService.html", "cl": 31, "ucl": 0, "cal": 31, "tl": 58, "cb": 6, "tb": 6, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "BattleLog.API.Service.PlayerService", "rp": "BattleLog.API_PlayerService.html", "cl": 31, "ucl": 0, "cal": 31, "tl": 57, "cb": 6, "tb": 6, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
     ]},
 ];
 

@@ -37,8 +37,8 @@ public class PlayerController : ControllerBase
         return Ok(findPlayer);
     }
 
-    [HttpPut("{player}")]
-    public IActionResult UpdatePlayer(Player player)
+    [HttpPut]
+    public IActionResult UpdatePlayer([FromBody]Player player)
     {
         var Player = _playerService.UpdatePlayer(player);
         return Ok(Player);

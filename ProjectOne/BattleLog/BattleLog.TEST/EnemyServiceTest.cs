@@ -152,4 +152,48 @@ public class EnemyServiceTest
         mockRepo.Verify(x => x.GetEnemyById(It.IsAny<int>()), Times.Once());
         mockRepo.Verify(x => x.DeleteEnemyById(It.IsAny<int>()), Times.Once());
     }
+    [Fact]
+    public void TestGetEnemyById_ReturnsNullIfIdIsLessThanOne()
+    {
+        // Arrange
+        Mock<IEnemyRepository> mockRepo = new();
+        var config = new MapperConfiguration(cfg => 
+        {
+            cfg.AddProfile<MappingProfile>();
+        });
+        IMapper mapper = config.CreateMapper();
+        EnemyService enemyService = new(mockRepo.Object, mapper);
+
+        // Act
+        var result = enemyService.GetEnemyById(0);
+
+        // Assert
+        Assert.Null(result);
+        mockRepo.Verify(x => x.GetEnemyById(It.IsAny<int>()), Times.Never());
+    }
+
+    [Fact]
+    public void TestUpdateEnemy_ReturnsNullIfEnemyDoesNotExist()
+    {
+        // Arrange
+        Mock<IEnemyRepository> mockRepo = new();
+        var config = new MapperConfiguration(cfg => 
+        {
+            cfg.AddProfile<MappingProfile>();
+        });
+        IMapper mapper = config.CreateMapper();
+        EnemyService enemyService = new(mockRepo.Object, mapper);
+
+        mockRepo.Setup(repo => repo.GetEnemyById(It.IsAny<int>())).Returns((Enemy)null!);
+
+        Enemy enemyToUpdate = new() { Id = 99, Name = "Orc", AttackPower = 10, Experience = 5, Health = 50 };
+
+        // Act
+        var result = enemyService.UpdateEnemy(enemyToUpdate);
+
+        // Assert
+        Assert.Null(result);
+        mockRepo.Verify(x => x.GetEnemyById(It.IsAny<int>()), Times.Once());
+        mockRepo.Verify(x => x.UpdateEnemy(It.IsAny<Enemy>()), Times.Never());
+    }
 }

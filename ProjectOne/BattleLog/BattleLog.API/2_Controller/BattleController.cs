@@ -37,8 +37,8 @@ public class BattleController : ControllerBase
         return Ok(findBattle);
     }
 
-    [HttpPut("{battle}")]
-    public IActionResult UpdateBattle(Battle battle)
+    [HttpPut]
+    public IActionResult UpdateBattle([FromBody]Battle battle)
     {
         var b = _battleService.UpdateBattle(battle);
         return Ok(battle);
